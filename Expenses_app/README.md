@@ -10,4 +10,5 @@
 
 #### Screenshots of the app
 
-<img src="/assets/app_ss/Screenshot_1609086004.png">
+<img src="./assets/apps_ss/Screenshot_1609086004.png" width="200" height="380">       <img src="./assets/apps_ss/Screenshot_1609086062.png" width="200" height="380">
+     <img src="./assets/apps_ss/Screenshot_1609086505.png" width="200" height="380">
