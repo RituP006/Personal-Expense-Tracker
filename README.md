@@ -1,7 +1,7 @@
 # Expenses_app
 
-#### This app is an personal Expense tracker that track daily expenses of one week.
-#### It has a chart that displays how much you spent each day in a week.
+### This app is an personal Expense tracker that track daily expenses of a week.
+### It displays how much you spent each day in a week in the form of chart.
  
 
 - It's built using Flutter.
@@ -10,5 +10,18 @@
 
 #### Screenshots of the app
 
-<img src="./assets/apps_ss/Screenshot_1609086004.png" width="200" height="380">       <img src="./assets/apps_ss/Screenshot_1609086062.png" width="200" height="380">
-     <img src="./assets/apps_ss/Screenshot_1609086505.png" width="200" height="380">
+##### Android Device (1080x2220) 
+<pre>
+<img src="./Expenses_app/assets/apps_ss/ss-0.png" width="200" height="380">    <img src="./Expenses_app/assets/apps_ss/ss-1.png" width="200" height="380">    <img src="./Expenses_app/assets/apps_ss/ss-2.png" width="200" height="380">
+     </pre>
+<br>
+ Landscape mode <br>
+ <pre>
+<img src="./Expenses_app/assets/apps_ss/Landscape-1.png" width="380" height="200">    <img src="./Expenses_app/assets/apps_ss/landscape-2.png" width="380" height="200">
+</pre>
+<br><br>
+
+##### Android Device(400x800)
+<pre>
+<img src="./Expenses_app/assets/apps_ss/nexus-one.png" width="200" height="380">    <img src="./Expenses_app/assets/apps_ss/nexus_one.png" width="200" height="380">
+</pre>
