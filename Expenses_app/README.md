@@ -7,3 +7,7 @@
 - It's built using Flutter.
 - It is responsive and adaptive. (Works on different device sizes and operating system)
 - It is flexible i.e it provides different look on Android and iOS devices.
+
+#### Screenshots of the app
+
+<img src="./assets/app-ss/.png>
