@@ -10,4 +10,4 @@
 
 #### Screenshots of the app
 
-<img src="./assets/app_ss/Screenshot_1609086004.png">
+<img src="/assets/app_ss/Screenshot_1609086004.png">
