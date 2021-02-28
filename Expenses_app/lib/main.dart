@@ -352,3 +352,4 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 // In mobile devices sometimes we have some extra reserved space for top notch or task manager at bottom, this spaces can't
 // be used to render widgets.
 // therefore wrap the body with SafeArea(), it ensures that everything is positioned within the provided boundaries.
+// UI updated
