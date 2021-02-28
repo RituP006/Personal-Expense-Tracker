@@ -5,7 +5,7 @@ class ChartBar extends StatelessWidget {
   final double spendingAmount;
   final double spendingPctOfTOtal;
 
- const ChartBar(this.label, this.spendingAmount, this.spendingPctOfTOtal);
+  const ChartBar(this.label, this.spendingAmount, this.spendingPctOfTOtal);
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,14 @@ class ChartBar extends StatelessWidget {
       return Column(
         children: <Widget>[
           Container(
-              height: constraints.maxHeight * 0.15,
-              child: FittedBox(
-                  child: Text('\$${spendingAmount.toStringAsFixed(0)}'))),
+            height: constraints.maxHeight * 0.15,
+            child: FittedBox(
+              child: Text(
+                '\$${spendingAmount.toStringAsFixed(0)}',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
           SizedBox(
             height: constraints.maxHeight * 0.05,
           ),
@@ -35,7 +40,7 @@ class ChartBar extends StatelessWidget {
                   heightFactor: spendingPctOfTOtal,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColorDark,
+                      color: Colors.pink,
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -48,7 +53,14 @@ class ChartBar extends StatelessWidget {
           ),
           Container(
               height: constraints.maxHeight * 0.15,
-              child: FittedBox(child: Text(label))),
+              child: FittedBox(
+                  child: Text(
+                label,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
+                ),
+              ))),
         ],
       );
     });
@@ -67,8 +79,7 @@ class ChartBar extends StatelessWidget {
 // constraints - it defines how much space a widget takes. all built-in widgets in flutter has default constraints.
 // constraints always refer to height and width and are expressed as minimum or maximum height or width.
 
-
 // It's possible to declare a constructor as const if all its parameter are final, cause that means that instance of constructor can
-// never be changed. 
+// never be changed.
 // constructor can not be declared as const if it has any non-final parameter.
-// chartbar constructor is declared as const above.  
+// chartbar constructor is declared as const above.

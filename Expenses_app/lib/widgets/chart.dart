@@ -40,12 +40,24 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(groupedTransactionValues);
+    // print(groupedTransactionValues);
     return Card(
+      color: Theme.of(context).primaryColor,
       elevation: 6,
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.only(bottom: 30, top: 10, left: 25, right: 25),
       child: Container(
-        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26.withOpacity(0.3),
+              spreadRadius: 1,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+        padding: EdgeInsets.all(30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: groupedTransactionValues.map((data) {
