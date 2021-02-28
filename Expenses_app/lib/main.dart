@@ -20,13 +20,29 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static const Map<int, Color> colorMap = {
+    50: Color.fromRGBO(42, 54, 59, 0.1),
+    100: Color.fromRGBO(42, 54, 59, 0.2),
+    200: Color.fromRGBO(42, 54, 59, 0.3),
+    300: Color.fromRGBO(42, 54, 59, 0.4),
+    400: Color.fromRGBO(42, 54, 59, 0.5),
+    500: Color.fromRGBO(42, 54, 59, 0.6),
+    600: Color.fromRGBO(42, 54, 59, 0.7),
+    700: Color.fromRGBO(42, 54, 59, 0.8),
+    800: Color.fromRGBO(42, 54, 59, 0.9),
+    900: Color.fromRGBO(42, 54, 59, 1.0),
+  };
+
+  static const MaterialColor _2A3638 = MaterialColor(0xFF2A363B, colorMap);
+
   @override
   Widget build(BuildContext context) {
     return Platform.isIOS
         ? CupertinoApp(
             title: 'Personal Expenses',
+            debugShowCheckedModeBanner: false,
             theme: CupertinoThemeData(
-                primaryColor: Colors.purple,
+                primaryColor: _2A3638,
                 primaryContrastingColor: Colors.white,
                 textTheme: CupertinoTextThemeData(
                   textStyle: TextStyle(fontFamily: 'Quicksand'),
@@ -34,15 +50,18 @@ class MyApp extends StatelessWidget {
             home: MyHomePage(),
           )
         : MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Personal Expenses',
             theme: ThemeData(
-                primarySwatch: Colors.purple,
-                accentColor: Colors.amber,
-                fontFamily: 'Quicksand',
-                textTheme: ThemeData.light().textTheme.copyWith(
-                        button: TextStyle(
+              primarySwatch: _2A3638,
+              // accentColor: Colors.amber,
+              fontFamily: 'Quicksand',
+              textTheme: ThemeData.light().textTheme.copyWith(
+                    button: TextStyle(
                       color: Colors.white,
-                    ))),
+                    ),
+                  ),
+            ),
             home: MyHomePage(),
           );
   }
@@ -159,11 +178,13 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
       MediaQueryData mediaquery, AppBar appBar, Widget txlistwidget) {
     return [
       Container(
-          height: (mediaquery.size.height -
-                  appBar.preferredSize.height -
-                  mediaquery.padding.top) *
-              0.3,
-          child: Chart(_recentTransaction)),
+        color: Theme.of(context).primaryColor,
+        height: (mediaquery.size.height -
+                appBar.preferredSize.height -
+                mediaquery.padding.top) *
+            0.4,
+        child: Chart(_recentTransaction),
+      ),
       txlistwidget
     ];
   }
@@ -193,6 +214,12 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                 ]),
           )
         : AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.short_text),
+              onPressed: () {},
+            ),
+            centerTitle: true,
+            elevation: 0,
             title: Text(
               'Personal Expenses',
               style: TextStyle(fontFamily: 'Open Sans'),
@@ -205,11 +232,12 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
           );
 
     final txlistwidget = Container(
-        height: (mediaquery.size.height -
-                appBar.preferredSize.height -
-                mediaquery.padding.top) *
-            0.7,
-        child: TransactionList(_userTransaction, _deleteTransaction));
+      height: (mediaquery.size.height -
+              appBar.preferredSize.height -
+              mediaquery.padding.top) *
+          0.7,
+      child: TransactionList(_userTransaction, _deleteTransaction),
+    );
 
     final pageBody = SafeArea(
         child: SingleChildScrollView(

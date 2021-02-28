@@ -1,18 +1,29 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // for using dateformat
 
 import '../models/transaction.dart';
 
 class TransactionItem extends StatelessWidget {
-  const TransactionItem({
+  TransactionItem({
     Key key,
     @required this.transaction,
     @required this.deletetx,
+    @required this.randomNumber,
   }) : super(key: key);
 
   final Transaction transaction;
   final Function deletetx;
+  final int randomNumber;
 
+  final List<Color> colorpick = [
+    Colors.pink.shade200,
+    Colors.red.shade200,
+    Colors.blue.shade200,
+    Colors.orange.shade200,
+    Colors.green.shade200
+  ];
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -20,10 +31,15 @@ class TransactionItem extends StatelessWidget {
       elevation: 5,
       child: ListTile(
         leading: CircleAvatar(
+          backgroundColor: colorpick[randomNumber],
           radius: 30,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: FittedBox(child: Text('\$${transaction.amount}')),
+            child: FittedBox(
+                child: Text(
+              '\$${transaction.amount}',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )),
           ),
         ),
         title: Text(

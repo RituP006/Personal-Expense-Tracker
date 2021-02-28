@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import '../models/transaction.dart';
 import 'transaction_item.dart';
@@ -7,6 +8,7 @@ class TransactionList extends StatelessWidget {
   final Function deletetx;
 
   TransactionList(this.transactions, this.deletetx);
+  Random random = new Random();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,9 @@ class TransactionList extends StatelessWidget {
         : ListView.builder(
             itemBuilder: (ctx, index) {
               return TransactionItem(
-                  transaction: transactions[index], deletetx: deletetx);
+                  transaction: transactions[index],
+                  deletetx: deletetx,
+                  randomNumber: random.nextInt(5));
             },
             itemCount: transactions.length,
           );
