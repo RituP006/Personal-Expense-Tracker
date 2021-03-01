@@ -17,7 +17,7 @@
 <br>
  Landscape mode <br>
  <pre>
-<img src="./Expenses_app/assets/apps_ss/Landscape-1.png" width="380" height="200">    <img src="./Expenses_app/assets/apps_ss/landscape-2.png" width="380" height="200">
+<img src="./Expenses_app/assets/apps_ss/Landscape-1.png" width="380" height="150">    <img src="./Expenses_app/assets/apps_ss/landscape-2.png" width="380" height="150">
 </pre>
 <br><br>
 
