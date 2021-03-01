@@ -1,4 +1,4 @@
-# Expenses_app
+# Expense Tracker
 
 ### This app is an personal Expense tracker that track daily expenses of a week.
 ### It displays how much you spent each day in a week in the form of chart.
